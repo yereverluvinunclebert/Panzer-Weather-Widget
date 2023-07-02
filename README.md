@@ -3,6 +3,7 @@
 Panzer Weather Gauge Yahoo Widget, written in Javascript and XML for the Yahoo 
 Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as  Apple Mac Sierra.
 
+![panzerWeather650](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/84cd3ab3-bdd3-4ea2-9889-f40f1e276894)
 
 This Panzer weather widget is an attractive set of dieselpunk Yahoo widgets for 
 your desktop. It is a set of weather gauges. The widget consists of five gauges, 
@@ -34,6 +35,8 @@ the Yahoo Widget Konfabulator engine. The engine interprets the javascript and
 creates the widget according to the XML description and using the images you 
 provide. 
 
+![panzer-temperature-icon](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/9fb6faad-bf1a-42e9-bc64-3853e9ab42df)
+
 Built using: 
 
 	RJTextEd Advanced Editor  https://www.rj-texted.se/
@@ -62,8 +65,7 @@ Running the widget using a javascript engine frees javascript from running only
 within the captivity of a browser, you will now be able to run these widgets on 
 your Windows desktop as long as you have the correct widget engine installed.
 
-![tank-help-750](https://github.com/yereverluvinunclebert/Panzer-Storage-Gauge-Ywidget/assets/2788342/fdfda55c-7e25-4908-ae5c-90e4c3c15961)
-
+![panzer-clipboard-help](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/d60f0956-532f-45e1-9506-82594eb27b83)
  
 Instructions for running Yahoo widgets on Windows
 =================================================
@@ -96,7 +98,7 @@ Wit these instructions you should be able to start Yahoo! Widgets and the
 menubar item should appear. Widgets can then be started from the menubar or by 
 double-clicking on the KON file in the usual way.
 
-![about](https://github.com/yereverluvinunclebert/Panzer-Storage-Gauge-Ywidget/assets/2788342/27808426-989e-4507-95e0-996b10ae1fd7)
+![about](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/0fc1e325-7a67-4eac-bc8f-fb6257086882)
 
 LICENCE AGREEMENTS:
 
