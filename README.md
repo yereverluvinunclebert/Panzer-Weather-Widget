@@ -15,6 +15,10 @@ change. The fifth gauge shows the current weather in iconised form, this is be a
 summary of the information derived from the weather or the current weather 
 forecast...
 
+![weather-icon-01](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/13c71691-9e1f-44a6-a463-6d9cf49d16d1)
+
+![background](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/3b3da7cb-84d0-4e8f-96cc-218e80aab092)
+
 It takes the weather from forecasts provided by airports and airfields. If you 
 can find an airfield nearby that has an ICAO code then it will supply local 
 weather data. You enter your local town name and if it has an airfield then it 
