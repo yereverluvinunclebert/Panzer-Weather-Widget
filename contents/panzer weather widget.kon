@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget minimumVersion="4.0">
+	<!--
+	Created by Dean Beedell
+
+	Coded by Dean Beedell
+	Visuals created by Dean Beedell
+	-->
+
+	<settings>
+		<setting name="allowCustomObjectAttributes" value="true"/>
+		<setting name="debug" value="off"/>
+	</settings>
+
+	<about-box>
+		<image>Resources/images/about.png</image>
+		<about-version font="arial" color="#000000" vOffset="262" hOffset="330" size="12">
+			<shadow color="#ffffff" vOffset="1" hOffset="0"/>
+		</about-version>
+		<about-text font="arial" color="#000000" vOffset="262" hOffset="360" url="http://www.lightquick.co.uk" data="http://www.lightquick.co.uk" size="12">
+			<shadow color="#ffffff" vOffset="1" hOffset="0"/>
+		</about-text>
+	</about-box>
+
+	<window visible="false" name="mainWindow" alignment="left" width="745" title="Panzer Weather Widget"
+		onFirstDisplay="mainWindow.hOffset = 10 + screen.availLeft; mainWindow.vOffset = 10 + screen.availTop; "
+		height="1024" shadow="0">
+	</window>
+
+	<window name="humidityWindow" title="Panzer Weather Widget" visible="false" zorder="17" width="809" height="689"  hoffset="579" voffset="22">
+			<image name="humiditySecondHand" zorder="16" width="32" height="302" src="Resources/images/Second.png" />
+			<image name="humiditySecondShadow" zorder="15" width="46" height="348" src="Resources/images/SecondShadow.png"/>
+			<image name="humidityActionSwitch" zorder="14" width="53" height="53" hoffset="623" voffset="63" src="Resources/images/tickButton.png" opacity="1" />
+			<image name="humidityHelpButton" zorder="13" width="51" height="51" hoffset="623" voffset="519" src="Resources/images/helpButton.png" opacity="1" />
+			<image name="humidityPin" zorder="12" width="52" height="52" hoffset="158" voffset="63" src="Resources/images/pin.png" opacity="1" />
+			<image name="humidityPrefs" zorder="11" width="51" height="51" hoffset="158" voffset="519" src="Resources/images/prefs01.png" />
+			<image name="humidityBigReflection" zorder="10" width="403" height="299" src="Resources/images/bigReflection.png" hoffset="168" voffset="63" />
+			<image name="humidityStartButton" zorder="9" width="168" height="125" hoffset="708" voffset="139"  src="Resources/images/startButton.png" />
+			<image name="humidityStopButton" zorder="8" width="95" height="95" hoffset="708" voffset="398"  src="Resources/images/startButton.png" />
+		  <image name="humiditySwitchFacesButton" zorder="7" src="Resources/images/startButton.png"/>
+			<image name="humiditySurround" zorder="6" width="775" height="660" src="Resources/images/surround.png" hoffset="-3" voffset="3" />
+			<image name="humidityWindowReflection" zorder="5" width="123" height="111" src="Resources/images/windowReflection.png" hoffset="510" voffset="215" />
+			<text name="humidityText" zorder="4" visible="false" color="#ECDAB4" data="00 " size="21" voffset="188" hAlign="0" vAlign="0" font="Arial" hoffset="312" />
+		  <textarea name="humidityTextArea" zorder="3" visible="false" font="Arial" color="#ECDAB4" data="00" alignment="center" style="font-weight:bold;text-align:center" size="20" />
+			<image name="humidityDangerLamp"  visible="false" zorder="2" width="47" height="48" hoffset="246" voffset="150" src="Resources/images/red-lampfalse.png"/>
+			<image name="humidityBackground" zorder="1" width="755" height="660"  src="Resources/images/back-panzer-humidity.png" hoffset="4" voffset="6"/>
+      <image>
+       <name>busyBlur</name>
+        <src>Resources/images/busyBlur.png</src>
+        <hOffset>60</hOffset>
+        <vOffset>60</vOffset>
+        <zorder>24</zorder>
+        <visible>false</visible>
+      </image>
+
+      <image>
+        <name>busy</name>
+        <src>Resources/images/busy-F1-32x32x24.png</src>
+        <hOffset>50</hOffset>
+        <vOffset>50</vOffset>
+        <zorder>25</zorder>
+        <visible>false</visible>
+      </image>
+
+
+		</window>
+		
+    <window name="thermometerWindow" title="Panzer Weather Widget" visible="false" zorder="17" width="809" height="689"  hoffset="9" voffset="26">
+			<image name="thermometerSecondHand" zorder="16" width="32" height="302" src="Resources/images/Second.png" />
+			<image name="thermometerSecondShadow" zorder="15" width="46" height="348" src="Resources/images/SecondShadow.png" />
+			<image name="thermometerActionSwitch" zorder="14" width="53" height="53" hoffset="623" voffset="63"  src="Resources/images/tickButton.png" opacity="1" />
+			<image name="thermometerHelpButton" zorder="13" width="51" height="51" hoffset="623" voffset="519"  src="Resources/images/helpButton.png" opacity="1" />
+			<image name="thermometerPin" zorder="12" width="52" height="52" hoffset="158" voffset="63"  src="Resources/images/pin.png" opacity="1" />
+			<image name="thermometerPrefs" zorder="11" width="51" height="51" hoffset="158" voffset="519"  src="Resources/images/prefs01.png" />
+			<image name="thermometerBigReflection" zorder="10" width="403" height="299" src="Resources/images/bigReflection.png" hoffset="168" voffset="63" />
+			<image name="thermometerStartButton" zorder="9" width="168" height="125" hoffset="708" voffset="139"  src="Resources/images/startButton.png"  />
+			<image name="thermometerStopButton" zorder="8" width="95" height="95" hoffset="708" voffset="398"  src="Resources/images/startButton.png"  />
+			<image name="thermometerSwitchFacesButton" zorder="7" width="78" height="106" hoffset="702" voffset="260" tooltip="Press to switch the dial faces." src="Resources/images/startButton.png"/>
+			<image name="thermometerSurround" zorder="6" width="775" height="660" src="Resources/images/surround.png" hoffset="-3" voffset="3" />
+			<image name="thermometerWindowReflection" zorder="5" width="123" height="111" src="Resources/images/windowReflection.png" hoffset="510" voffset="215" />
+			<text name="thermometerText" zorder="4" visible="false" width="61" color="#ECDAB4" height="38" data="000" size="21" voffset="188" hAlign="0" vAlign="0" font="Arial" hoffset="312" />
+		  <textarea name="thermometerTextArea"  zorder="3" visible="false" font="Arial" color="#ECDAB4" data="00" alignment="center" style="font-weight:bold;text-align:center" size="20" />
+			<text name="thermometerScaleText" zorder="4" visible="false" width="61" color="#ECDAB4" height="38" data="C" size="21" voffset="188" hAlign="0" vAlign="0" font="Arial" hoffset="312" />
+		  <textarea name="thermometerScaleTextArea"  zorder="3" visible="false" font="Arial" color="#ECDAB4" data="00" alignment="center" style="font-weight:bold;text-align:center" size="20" />
+
+			<image name="thermometerHotLamp" zorder="2" width="47" height="48" hoffset="246" voffset="150" src="Resources/images/red-lampfalse.png"/>
+			<image name="thermometerColdLamp" zorder="2" width="47" height="48" hoffset="446" voffset="150" src="Resources/images/blue-lampfalse.png"/>
+			<image name="thermometerBackground" zorder="1" width="755" height="660"   voffset="5" hoffset="2" src="Resources/images/background-centigrade.png"/>
+		</window>
+  		
+    <window name="anemometerWindow" title="Panzer Weather Widget" visible="false" zorder="17" width="809" height="689"  hoffset="199" voffset="26">
+			<image name="anemometerWindHand" zorder="16" width="32" height="302" src="Resources/images/windHand.png" />
+			<image name="anemometerSecondHand" zorder="16" width="32" height="302" src="Resources/images/Second.png" />
+			<image name="anemometerSecondShadow" zorder="15" width="46" height="348" src="Resources/images/SecondShadow.png" />
+			<image name="anemometerActionSwitch" zorder="14" width="53" height="53" hoffset="623" voffset="63"  src="Resources/images/tickButton.png" opacity="1" />
+			<image name="anemometerHelpButton" zorder="13" width="51" height="51" hoffset="623" voffset="519"  src="Resources/images/helpButton.png" opacity="1" />
+			<image name="anemometerPin" zorder="12" width="52" height="52" hoffset="158" voffset="63"  src="Resources/images/pin.png" opacity="1" />
+			<image name="anemometerPrefs" zorder="11" width="51" height="51" hoffset="158" voffset="519"  src="Resources/images/prefs01.png" />
+			<image name="anemometerBigReflection" zorder="10" width="403" height="299" src="Resources/images/bigReflection.png" hoffset="168" voffset="63" />
+			<image name="anemometerStartButton" zorder="9" width="168" height="125" hoffset="708" voffset="139"  src="Resources/images/startButton.png"  />
+			<image name="anemometerStopButton" zorder="8" width="95" height="95" hoffset="708" voffset="398"  src="Resources/images/startButton.png"  />
+			<image name="anemometerSwitchFacesButton" zorder="7" width="78" height="106" hoffset="702" voffset="260" tooltip="Press to switch the dial faces." src="Resources/images/startButton.png"/>
+			<image name="anemometerSurround" zorder="6" width="775" height="660" src="Resources/images/surround.png" hoffset="-3" voffset="3" />
+			<image name="anemometerWindowReflection" zorder="5" width="123" height="111" src="Resources/images/windowReflection.png" hoffset="510" voffset="215" />
+			<text name="anemometerText" zorder="4" visible="false" width="61" color="#ECDAB4" height="38" data="000" size="21" voffset="188" hAlign="0" vAlign="0" font="Arial" hoffset="312" />
+		  <textarea name="anemometerTextArea"  zorder="3" visible="false" font="Arial" color="#ECDAB4" data="000" alignment="center" style="font-weight:bold;text-align:center" size="20" />
+			<image name="anemometerLamp" zorder="2" width="47" height="48" hoffset="246" voffset="150" src="Resources/images/red-lampfalse.png"/>
+			<image name="anemometerBackground" zorder="1" width="755" height="660"   voffset="5" hoffset="2" src="Resources/images/back-panzer-wind-knots.png"/>
+		</window>
+    
+  		
+    <window name="weatherIconGaugeWindow" title="Panzer Weather Widget" visible="false" zorder="17" width="809" height="689"  hoffset="199" voffset="26">
+  		<image vOffset="410" name="weatherIcon" zorder="14" opacity="255" hOffset="410" src="Resources/images/globe.png"/>
+  		<image vOffset="410" name="windIcon" zorder="15" visible="true" src="" hOffset="70"/>
+  		<image vOffset="410" name="fogIcon" zorder="15" visible="true" src="" hOffset="120"/>
+  		<image vOffset="410" name="exoticIcon" zorder="15" visible="true" src="" hOffset="120"/>
+  		<image vOffset="410" name="showersIcon" zorder="15" visible="true" src="" hOffset="410"/>
+			<image name="weatherIconGaugeActionSwitch" zorder="14" width="53" height="53" hoffset="623" voffset="63"  src="Resources/images/tickButton.png" opacity="1" />
+			<image name="weatherIconGaugeHelpButton" zorder="13" width="51" height="51" hoffset="623" voffset="519"  src="Resources/images/helpButton.png" opacity="1" />
+			<image name="weatherIconGaugePin" zorder="12" width="52" height="52" hoffset="158" voffset="63"  src="Resources/images/pin.png" opacity="1" />
+			<image name="weatherIconGaugePrefs" zorder="11" width="51" height="51" hoffset="158" voffset="519"  src="Resources/images/prefs01.png" />
+			<image name="weatherIconGaugeBigReflection" zorder="15" width="403" height="299" src="Resources/images/bigReflection.png" hoffset="168" voffset="63" />
+			<image name="weatherIconGaugeStartButton" zorder="9" width="168" height="125" hoffset="708" voffset="139"  src="Resources/images/startButton.png"  />
+			<image name="weatherIconGaugeStopButton" zorder="8" width="95" height="95" hoffset="708" voffset="398"  src="Resources/images/startButton.png"  />
+			<image name="weatherIconGaugeSwitchFacesButton" zorder="7" width="78" height="106" hoffset="702" voffset="260" tooltip="Press to switch the dial faces." src="Resources/images/startButton.png"/>
+			<image name="weatherIconGaugeSurround" zorder="6" width="775" height="660" src="Resources/images/surround.png" hoffset="-3" voffset="3" />
+			<image name="weatherIconGaugeWindowReflection" zorder="15" width="123" height="111" src="Resources/images/windowReflection.png" hoffset="510" voffset="215" />
+			<image name="weatherIconGaugeLamp" zorder="2" width="47" height="48" hoffset="410" voffset="536" src="Resources/images/red-lamptrue.png"/>
+			<image name="weatherIconGaugeBackground" zorder="1" width="755" height="660"   voffset="5" hoffset="2" src="Resources/images/back-panzer-weather-icon.png"/>
+  		<image
+  			src			= "Resources/images/manual3.png"
+  			name		= "weatherIconGaugeManual"
+  			opacity		= "255"
+    		width		= "552 "
+    		height		= "552 "
+        hRegistrationPoint="277"
+        vRegistrationPoint="277"
+        zorder="5"
+  		/>
+      <image>
+             <name>preceding</name>
+             	<!--
+             <src>Resources/preceding-button.png</src>
+	           -->
+             <hOffset>170</hOffset>
+             <vOffset>193</vOffset>
+             <zorder>25</zorder>
+             <visible>false</visible>
+             <opacity>1</opacity>
+      </image>
+
+      <image>
+             <name>following</name>
+             	<!--
+             <src>Resources/following-button.png</src>
+	           -->             
+             <hOffset>275</hOffset>
+             <vOffset>192</vOffset>
+             <zorder>25</zorder>
+             <visible>false</visible>
+             <opacity>1</opacity>
+      </image>
+    </window>
+    
+		<window name="barometerWindow" title="Panzer Weather Widget" visible="false" width="809" height="689"  voffset="26" hoffset="389">
+			<image name="barometerSecondHand" zorder="16" width="32" height="302" src="Resources/images/Second.png" />
+			<image name="barometerSecondShadow" zorder="15" width="46" height="348" src="Resources/images/SecondShadow.png" />
+			<image name="barometerActionSwitch" zorder="14" width="53" height="53" hoffset="623" voffset="63"  src="Resources/images/tickButton.png" opacity="1" />
+			<image name="barometerHelpButton" zorder="13" width="51" height="51" hoffset="623" voffset="519" src="Resources/images/helpButton.png" opacity="1" />
+			<image name="barometerPin" zorder="12" width="52" height="52" hoffset="158" voffset="63"  src="Resources/images/pin.png" opacity="1" />
+			<image name="barometerPrefs" zorder="11" width="51" height="51" hoffset="158" voffset="519"   src="Resources/images/prefs01.png" />
+			<image name="barometerBigReflection" zorder="10" width="403" height="299" src="Resources/images/bigReflection.png" hoffset="168" voffset="63" />
+			<image name="barometerStartButton" zorder="9" width="168" height="125" hoffset="708" voffset="139"  src="Resources/images/startButton.png" />
+			<image name="barometerStopButton" zorder="8" width="95" height="95" hoffset="708" voffset="398"  src="Resources/images/startButton.png"  />
+			<image name="barometerSwitchFacesButton" zorder="7" width="78" height="106" hoffset="702" voffset="260"  tooltip="Press to switch the dial faces." src="Resources/images/startButton.png"/>
+			<image name="barometerSurround" zorder="6" width="775" height="660" src="Resources/images/surround.png" hoffset="-3" voffset="3" />
+			<image name="barometerWindowReflection" zorder="5" width="123" height="111" src="Resources/images/windowReflection.png" hoffset="510" voffset="215" />
+			
+      <text name="barometerHighText" zorder="4" visible="false" vOffset="368"  hOffset="472" data="000" color="#ECDAB4" size="16" font="Arial" />
+			<text name="barometerText" zorder="3" visible="false" vOffset="118" hOffset="297" data="000" color="#ECDAB4" size="16" font="Arial"  />
+		  
+      <textarea name="barometerTextArea" zorder="3" visible="false" vOffset="188" hOffset="302" font="Arial" color="#ECDAB4" data="000" alignment="center" style="font-weight:bold;text-align:center" size="20" />
+		  <textarea name="barometerHighTextArea" zorder="3" visible="false"  vOffset="188" hOffset="302" font="Arial" color="#ECDAB4" data="000" alignment="center" style="font-weight:bold;text-align:center" size="20" />
+			
+      <image name="barometerDangerLamp" zorder="2" width="47" height="48" hoffset="346" voffset="250" src="Resources/images/red-lampfalse.png"/>
+			<image name="barometerBackground" zorder="1" width="755" height="660" voffset="4" hoffset="6" src="Resources/images/back-panzer-millibars.png"/>
+  		<image
+  			src			= "Resources/images/manual3.png"
+  			name		= "barometerManual"
+  			opacity		= "255"
+    		width		= "552 "
+    		height		= "552 "
+        hRegistrationPoint="277"
+        vRegistrationPoint="277"
+        zorder="5"
+  		/>
+		</window>
+    
+	<window visible="false" name="searchWindow" width="400" title="Search" height="277" shadow="false">
+		<image src="Resources/images/search/background.png" opacity = "255"/>
+		<image vOffset="101" name="imgCmbResults" src="" hOffset="65" opacity = "100"/>
+	
+		<image
+			src			= "Resources/images/search/enterICAO.png"
+			name		= "enterICAO"
+			hOffset		= "26 "
+			vOffset		= "21 "
+			visible		= "true"
+		/>
+  		<image
+			src			= "Resources/images/search/enterLocation.png"
+			name		= "enterLocation"
+			hOffset		= "26 "
+			vOffset		= "21 "
+			visible		= "false"
+		/>
+    	
+		<text  hOffset="100" vOffset="76" name="txtSearching" data=""  style="font-family: 'courier new'; font-size: 14px; color: #000000;"/>
+		<textarea lines="1" vOffset="30" name="txt_search" style="font-family: 'courier new'; color: #000000;" width="160" hOffset="195"  bgOpacity="12" editable="true" size="19"/>
+		<textarea lines="1" hOffset="95" vOffset="61" name="txt_results" data=""  style="font-family: 'courier new'; font-size: 14px; color: #000000;" width="210" bgColor="#9EFFA1" bgOpacity="0"  size="14"/>
+
+		<image
+			src			= "Resources/images/search/okButton.png"
+			name		= "btn_ok"
+			hOffset		= "281 "
+			vOffset		= "116 "
+			opacity		= "255"
+		/>
+
+		<image
+			src			= "Resources/images/search/exitButton.png"
+			name		= "btn_cancel"
+			hOffset		= "281 "
+			vOffset		= "169 "
+			opacity		= "255"
+		/>
+    
+    <image
+			src			= "Resources/images/search/smallGreenLamp.png"
+			name		= "icaoLamp"
+			hOffset		= "177 "
+			vOffset		= "144 "
+			opacity		= "255"
+		/>
+
+		<image
+			src			= "Resources/images/search/smallRedLamp.png"
+			name		= "locationLamp"
+			hOffset		= "177 "
+			vOffset		= "199 "
+			opacity		= "255"
+		/>
+
+		<image
+			src			= "Resources/images/search/radioKnob1.png"
+			name		= "radioKnob1"
+			hOffset		= "237 "
+			vOffset		= "147 "
+			opacity		= "255"
+		/>
+
+		<image
+			src			= "Resources/images/search/radioKnob2.png"
+			name		= "radioKnob2"
+			hOffset		= "208 "
+			vOffset		= "147 "
+			opacity		= "255"
+		/>
+
+	</window>
+
+
+	<window visible="true" title="Panzer Weather Widget" name="infoWindow" width="617" height="448" shadow="false">
+		<frame name="infoFrame" hOffset = "50" vOffset = "50">
+
+			<image name="textBckgnd"
+				src="resources/images/background.png"
+				opacity="255" />
+
+			<textarea name="weatherText"
+				height="210"
+				width="150"
+				size="8"
+				scrollbar="false"
+				bgColor="#060606"
+				bgOpacity="0"
+				color="#000000"
+				editable="0"
+				vOffset="57"
+				hOffset="45"
+        data="obtaining weather data... from https://aviationweather.gov/"
+        style="text-align:center"
+        font = "courier new"  />
+		</frame>
+    
+    <frame
+			name		= "clock_frame"
+			width		= "240"
+			height		= "250"
+			hOffset		= "75"
+			vOffset		= "165"
+			visible		= "false"
+			hRegistrationPoint = "43"
+			vRegistrationPoint = "66"
+			rotation	= "5"
+			tooltip		= ""
+		/>
+
+	</window>
+
+  <window visible="true" name="helpWindow" zorder="100" alignment="left" width="760" title="Panzer weather Widget HELP" height="630" >
+      		<image src = "Resources/images/panzer-anemometer-help.png"  zorder="99" name = "anemometerHelp" visible = "false" />
+      		<image src = "Resources/images/panzer-thermometer-help.png"  zorder="99" name = "thermometerHelp" visible = "false" />
+      		<image src = "Resources/images/panzer-humidity-help.png"  zorder="99" name = "humidityHelp" visible = "false" />
+      		<image src = "Resources/images/panzer-barometer-help.png"  zorder="99" name = "barometerHelp" visible = "false" />
+      		<image src = "Resources/images/panzer-clipboard-help.png"  zorder="98" name = "clipboardHelp" visible = "false" />
+      		<image src = "Resources/images/panzer-weatherIconGauge-help.png"  zorder="99" name = "weatherIconGaugeHelp" visible = "false" />
+	</window>
+  
+	<prefGroup name="metar" order="1" icon="Resources/images/metar-icon.png" title="METAR configuration"/>
+	<prefGroup name="metar2" order="2" icon="Resources/images/metar.png" title="METAR sampling"/>
+	<prefGroup name="sizing" order="3" icon="Resources/images/commands-icon.png" title="Gauge Sizes"/>
+	<prefGroup name="mouse" order="4" icon="Resources/images/mouse-icon.png" title="Mouse Configuration"/>
+	<prefGroup name="configuration" order="5" icon="Resources/images/config-icon.png" title="Configuration"/>
+	<prefGroup name="timePiecePosition" order="6" icon="Resources/images/earth.png" title="Positioning"/>
+	<prefGroup name="language" order="7" icon="Resources/images/icon.png" title="language"/>
+ 	<prefGroup name="development" order="8" icon="Resources/images/development-icon.png" title="Development"/>
+ 
+  <preference hidden="true" description="Development ONLY: Enter your editor path here along with any command line switches required to open this widget in the editor. This function only operates if the widget has been unpacked and DEBUG is ON. " name="imageEditPref" group="development" title="Default Editor:" defaultValue="" type="text"/>
+  <preference hidden="true" kind="files" description="Alt+double-clicking on the widget image will open this file. " name="openFilePref" group="commands" style="open" title="Open File" type="selector"/>
+
+  <preference hidden="false" description="Select any one of your installed fonts - will be used in the information pop-up box that appears when you double-click on the moon. By default will use Courier New font at 8pt size." name="popupPanelFont" group="configuration" title="Pop-up Font:" defaultValue="Courier New" type="font"/>
+  <preference description="Choose the font size of the popup text above." name="popupPanelFontSizePref" group="configuration" title="Pop-up panel text size:" defaultValue="11" type="popup">
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>16</option>
+            <option>18</option>
+            <option>20</option>
+            <option>22</option>
+            <option>24</option>
+            <option>26</option>
+            <option>28</option>
+            <option>32</option>
+            <option>36</option>
+  </preference>
+
+
+	<preference hidden="false" group="mouse" description="The scroll-wheel resizing direction can be determined here. Scrolling the mousewheel with the above selection will decrease the size of the gauge." name="MouseWheelPref" title="Mouse Scroll Wheel" defaultValue="up" type="popup">
+		<option>up</option>
+		<option>down</option>
+	</preference>
+  
+  <preference description="With the mouse cursor hovering over each each gauge require CTRL + mouse scroll wheel up/down to resize or just the scroll wheel." name="ctrlResizePref" group="mouse" title="Mouse + CTRL to resize:" defaultValue="required" type="popup">
+    <option>CTRL required + scrollwheel</option>
+    <optionValue>CTRL</optionValue>
+    <option>Just the scrollwheel resize</option>
+    <optionValue>scrollWheel</optionValue>
+  </preference>
+
+    
+	<preference name="langpref">
+		<title>Language Selection</title>
+		<type>popup</type>
+		<option>default</option>
+		<optionValue>default</optionValue>
+		<option>alternative</option>
+		<optionValue>alternative</optionValue>
+		<description>Enable translation here. Do NOT change this pref unless you know what you are doing. Yahoo widget supports multiple languages by default. However, the list of languages is short and the majority of text items are NOT translated. This widget can support an additional language translation that works for the whole widget as long as you supply the translation file. This widget has one example language file - Romanian and that is only 80% complete!. To enable this you simply select the alternative language setting and add your own two-letter language code in the option below.</description>
+		<group>language</group>
+	</preference>
+  
+  <preference name="metarpref">
+		<title>Metar Search</title>
+		<type>popup</type>
+		<option>location</option>
+		<optionValue>location</optionValue>
+		<option>icao</option>
+		<optionValue>icao</optionValue>
+		<description>If you set this switch you will need to enter ICAO codes into the search instead of location eg. East Midlands ICAO Code: EGNX.</description>
+		<group>metar</group>
+	</preference>
+
+	<preference name="langpref2">
+		<title>Language Code</title>
+		<defaultValue>ro</defaultValue>
+		<description>Do not change this code unless you have a corresponding language file. For those languages that are not supported by the YWE - unpack the widget and then add your own language file below the Resources folder and enter your two letter language code above. We supply a single translation file Romanian (ro) in the /resources/ro folder named Localizable.strings.</description>
+		<group>language</group>
+	</preference>
+
+	<preference	 group="sizing" ticks="41" minLength="5" description="Adjust the clipboard to a percentage of the original size. You can also use Ctrl+Mousewheel when on the widget itself."
+		name="infoSize" maxLength="220" title="Clipboard Size:" defaultValue="100" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>100</tickLabel>
+		<tickLabel>140</tickLabel>
+		<tickLabel>180</tickLabel>
+		<tickLabel>220</tickLabel>
+	</preference>
+
+	<preference	 group="sizing" ticks="41" minLength="5" description="Adjust the barometer size."
+		name="barometerSize" maxLength="220" title="Barometer Gauge Size:" defaultValue="30" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>100</tickLabel>
+		<tickLabel>140</tickLabel>
+		<tickLabel>180</tickLabel>
+		<tickLabel>220</tickLabel>
+	</preference>
+
+	<preference	 group="sizing" ticks="41" minLength="5" description="Adjust the thermometer size."
+		name="thermometerSize" maxLength="220" title="Thermometer Gauge Size:" defaultValue="30" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>100</tickLabel>
+		<tickLabel>140</tickLabel>
+		<tickLabel>180</tickLabel>
+		<tickLabel>220</tickLabel>
+	</preference>
+
+	<preference	 group="sizing" ticks="41" minLength="5" description="Adjust the anemometer size."
+		name="anemometerSize" maxLength="220" title="Anemometer Gauge Size:" defaultValue="30" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>100</tickLabel>
+		<tickLabel>140</tickLabel>
+		<tickLabel>180</tickLabel>
+		<tickLabel>220</tickLabel>
+	</preference>
+
+	<preference	group="sizing" ticks="41" minLength="5" description="Adjust the weather icon gauge size."
+		name="weatherIconGaugeSize" maxLength="220" title="Weather icon gauge size:" defaultValue="30" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>100</tickLabel>
+		<tickLabel>140</tickLabel>
+		<tickLabel>180</tickLabel>
+		<tickLabel>220</tickLabel>
+	</preference>
+
+	<preference	 group="sizing" ticks="41" minLength="5" description="Adjust the humidity gauge size."
+		name="humiditySize" maxLength="220" title="Humidity Gauge Size:" defaultValue="30" type="slider">
+		<tickLabel>020</tickLabel>
+		<tickLabel>060</tickLabel>
+		<tickLabel>100</tickLabel>
+		<tickLabel>140</tickLabel>
+		<tickLabel>180</tickLabel>
+		<tickLabel>220</tickLabel>
+	</preference>
+
+<preference hidden="false" description="Enable or Disable tooltips here " name="tooltipPref" group="configuration" title="Tooltips:" defaultValue="enabled" type="popup">
+    <option>enabled</option>
+    <optionValue>enabled</optionValue>
+    <option>disabled</option>
+    <optionValue>disabled</optionValue>
+</preference>
+
+	<preference hidden="true" group="configuration" description="Check this box if you don't want to see the Licence Conditions again." name="licenceHide" title="Don't Show Licence Again" defaultValue="0" type="checkbox"/>
+
+  
+  <preference hidden="false" description="Shows the weather panel (clipboard) permanently." name="permanentPanel" group="configuration" title="Weather Panel:" defaultValue="enabled" type="popup">
+    <option>enabled</option>
+    <option>disabled</option>
+  </preference>
+
+  <preference hidden="false" description="Gives the current gauge focus when your mouse cursor hovers over it. If disabled you have to click on each gauge to gain the pop-up weather on a hover." name="mouseHoverPref" group="timePiecePosition" title="Gauge Mouse Focus:" defaultValue="enabled" type="popup">
+    <option>enabled</option>
+    <option>disabled</option>
+  </preference>
+
+
+	<preference hidden="false" group="configuration" description="This widget makes sounds by default - you can enable or disable the sounds as you require." name="soundPref" title="Sound Control" defaultValue="enabled" type="popup">
+		<option>enabled</option>
+		<option>disabled</option>
+	</preference>
+
+	<preference name="widgetHideModePref">
+		<title>Aspect Ratio Hidden Mode</title>
+		<type>popup</type>
+		<option>landscape</option>
+		<option>portrait</option>
+		<option>none</option>
+		<defaultValue>none</defaultValue>
+		<hidden>false</hidden>
+		<group>timePiecePosition</group>
+		<description>Tablets only or devices that can switch between portrait and landscape. Best not to fiddle with this unless you know what you are doing. Here you can choose whether the widget is hidden by default in either landscape or portrait mode or not at all. This allows you to have certain widgets that do not obscure the screen in either landscape or portrait. If you accidentally set it so you can't find it on screen - then simply choose 'show widget' on the widget dock and then change the setting here to none.</description>
+	</preference>
+ 
+
+	<preference name="barometerScalePref">
+		<title>Barometer Scale</title>
+		<type>popup</type>
+		<option>millibars</option>
+		<optionValue>millibars</optionValue>
+		<option>inches of mercury (hg)</option>
+		<optionValue>hg</optionValue>
+		<option>mm of mercury (mmhg)</option>
+		<optionValue>mmhg</optionValue>
+		<option>hectoPascals</option>
+		<optionValue>hpa</optionValue>
+		<defaultValue>millibars</defaultValue>
+		<hidden>false</hidden>
+		<group>metar</group>
+		<description>Choose the scale you are familiar with.</description>
+	</preference>
+
+	<preference hidden="false" group="timePiecePosition" name="widgetLockPercentagePref"  description="For tablets and devices whose aspect ratio can be changed. The widget can be automatically positioned proportionally when switching between portrait and landscape." title="Widget Position by Percentage:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference name="thermometerHLocationPercPref">
+		<title>thermometer gauge horizontal location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's horizontal location stored in %.</description>
+	</preference>
+
+	<preference name="barometerHLocationPercPref">
+		<title>barometer gauge horizontal location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's horizontal location stored in %.</description>
+	</preference>
+
+	<preference name="anemometerHLocationPercPref">
+		<title>anemometer gauge horizontal location</title>
+		<hidden>true</hidden>
+		<description>The widget's horizontal location stored in %.</description>
+	</preference>
+
+
+	<preference name="weatherIconGaugeHLocationPercPref">
+		<title>weatherIconGauge gauge horizontal location</title>
+		<hidden>true</hidden>
+		<description>The widget's horizontal location stored in %.</description>
+	</preference>
+
+	<preference name="humidityHLocationPercPref">
+		<title>humidity gauge horizontal location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's horizontal location stored in %.</description>
+	</preference>
+
+	<preference name="thermometerVLocationPercPref">
+		<title>thermometer gauge vertical location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's vertical location stored in %.</description>
+	</preference>
+
+	<preference name="barometerVLocationPercPref">
+		<title>barometer gauge vertical location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's vertical location stored in %.</description>
+	</preference>
+
+	<preference name="anemometerVLocationPercPref">
+		<title>anemometer gauge vertical location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's vertical location stored in %.</description>
+	</preference>
+
+
+	<preference name="weatherIconGaugeVLocationPercPref">
+		<title>weatherIconGauge gauge vertical location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's vertical location stored in %.</description>
+	</preference>
+
+	<preference name="humidityVLocationPercPref">
+		<title>humidity gauge vertical location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's vertical location stored in %.</description>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="thermometerLockLandscapeModePref" title="Widget Locked in Landscape:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="anemometerLockLandscapeModePref" title="Widget Locked in Landscape:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="weatherIconGaugeLockLandscapeModePref" title="Widget Locked in Landscape:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="humidityLockLandscapeModePref" title="Widget Locked in Landscape:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="barometerLockLandscapeModePref" title="Widget Locked in Landscape:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="thermometerLockPortraitModePref"	description="The widget can be locked into a certain position when in landscape/portrait mode, it ensures that the widget always appears where you want it to. Using the fields below, you can assign a default x/y position for both Landscape or Portrait mode. When the widget is locked in place using the locking pin, this value is set automatically." title="Widget Locked in Portrait:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="anemometerLockPortraitModePref"	description="The widget can be locked into a certain position when in landscape/portrait mode, it ensures that the widget always appears where you want it to. Using the fields below, you can assign a default x/y position for both Landscape or Portrait mode. When the widget is locked in place using the locking pin, this value is set automatically." title="Widget Locked in Portrait:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+
+	<preference hidden="true" group="timePiecePosition" name="weatherIconGaugeLockPortraitModePref"	description="The widget can be locked into a certain position when in landscape/portrait mode, it ensures that the widget always appears where you want it to. Using the fields below, you can assign a default x/y position for both Landscape or Portrait mode. When the widget is locked in place using the locking pin, this value is set automatically." title="Widget Locked in Portrait:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="humidityLockPortraitModePref"	description="The widget can be locked into a certain position when in landscape/portrait mode, it ensures that the widget always appears where you want it to. Using the fields below, you can assign a default x/y position for both Landscape or Portrait mode. When the widget is locked in place using the locking pin, this value is set automatically." title="Widget Locked in Portrait:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition" name="barometerLockPortraitModePref"	description="The widget can be locked into a certain position when in landscape/portrait mode, it ensures that the widget always appears where you want it to. Using the fields below, you can assign a default x/y position for both Landscape or Portrait mode. When the widget is locked in place using the locking pin, this value is set automatically." title="Widget Locked in Portrait:" defaultValue="disabled" type="popup">
+		<option>enabled</option><optionValue>enabled</optionValue>
+		<option>disabled</option><optionValue>disabled</optionValue>
+	</preference>
+
+	<preference hidden="true" group="timePiecePosition"  name="thermometerLandscapeHoffsetPref" title="Landscape Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="thermometerLandscapeVoffsetPref" title="Landscape Yoffset/top Y pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="thermometerPortraitHoffsetPref" title="Portrait Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition" description="" name="thermometerPortraitVoffsetPref" title="Portrait Yoffset/top Y pos" type="text"/>
+
+	<preference hidden="true" group="timePiecePosition"  name="anemometerLandscapeHoffsetPref" title="Landscape Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="anemometerLandscapeVoffsetPref" title="Landscape Yoffset/top Y pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="anemometerPortraitHoffsetPref" title="Portrait Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition" description="" name="anemometerPortraitVoffsetPref" title="Portrait Yoffset/top Y pos" type="text"/>
+
+	<preference hidden="true" group="timePiecePosition"  name="weatherIconGaugeLandscapeHoffsetPref" title="Landscape Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="weatherIconGaugeLandscapeVoffsetPref" title="Landscape Yoffset/top Y pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="weatherIconGaugePortraitHoffsetPref" title="Portrait Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition" description="" name="weatherIconGaugePortraitVoffsetPref" title="Portrait Yoffset/top Y pos" type="text"/>
+
+	<preference hidden="true" group="timePiecePosition"  name="barometerLandscapeHoffsetPref" title="Landscape Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="barometerLandscapeVoffsetPref" title="Landscape Yoffset/top Y pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="barometerPortraitHoffsetPref" title="Portrait Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition" description="" name="barometerPortraitVoffsetPref" title="Portrait Yoffset/top Y pos" type="text"/>
+
+	<preference hidden="true" group="timePiecePosition"  name="humidityLandscapeHoffsetPref" title="Landscape Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="humidityLandscapeVoffsetPref" title="Landscape Yoffset/top Y pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition"  name="humidityPortraitHoffsetPref" title="Portrait Hoffset/Left X pos" type="text"/>
+	<preference hidden="true" group="timePiecePosition" description="" name="humidityPortraitVoffsetPref" title="Portrait Yoffset/top Y pos" type="text"/>
+
+	<preference name="hLocationPref">
+		<title>Widget horizontal location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's horizontal location stored in pixels.</description>
+	</preference>
+
+	<preference name="vLocationPref">
+		<title>Widget vertical location</title>
+		<type>text</type>
+		<hidden>true</hidden>
+		<description>The widget's vertical location stored in pixels.</description>
+	</preference>
+
+
+  <preference hidden="false" group="configuration" description="The gauge pointers can be set to smooth or flick, smooth uses more CPU." name="actionSwitchPref" title="Smooth Pointer Movement" defaultValue="smooth" type="popup">
+		<option>flick</option>
+		<optionValue>tick</optionValue>
+		<option>smooth</option>
+		<optionValue>smooth</optionValue>
+	</preference>
+
+	<preference name="sampleIntervalPref2" group="metar2" >
+		<title>sampling frequency</title>
+		<hidden>false</hidden>		
+		<description>The previous sampling frequency (seconds). Don't change this - Modify using the slider below and click SAVE.</description>
+	</preference>
+  
+<preference group="metar2" description="Adjust to determine gauge sampling frequency (seconds). This is the polling interval by which the widget attempts to get the data from the source (default 600 seconds or ten minutes). The metar source provider and the location itself determines when the data is actually provided - a real person somewhere has to actually do a forecast." name="sampleIntervalPref" title="Sampling Interval:" defaultValue="600" minLength="300" maxLength="4800" ticks="30" type="slider">
+		<tickLabel>300</tickLabel>
+		<tickLabel>2250</tickLabel>
+		<tickLabel>4800</tickLabel>
+  </preference>
+<preference group="metar2" description="Adjust to determine storm checking frequency (seconds). This is the polling interval by which the widget compares pressure drops of 1 millibar (default 3600 seconds or one hour) indicating the increased chance of a storm." name="pressureTimerInterval" title="Storm Test Interval:" defaultValue="3600" minLength="1800" maxLength="7200" ticks="30" type="slider">
+		<tickLabel>1800</tickLabel>
+		<tickLabel>3600</tickLabel>
+		<tickLabel>7200</tickLabel>
+  </preference>
+ 
+  
+	<preference hidden="true" group="metar2" description="Pressure Storage Value - debug value = ignore" name="pressureStorage" defaultValue=""/>
+	<preference hidden="true" group="metar2" description="Pressure Storage Date - debug value = ignore" name="pressureStorageDate" defaultValue=""/>
+	<preference hidden="true" group="metar2"  description="Metar Country Code - debug value = ignore" name="CC" defaultValue="EN"/>
+	<preference hidden="true" group="metar2"  description="Metar Country Name - debug value = ignore" name="Country" defaultValue="United Kingdom"/>
+	<preference hidden="true" group="metar2"  description="Metar ICAO Code - debug value = ignore" name="icao" defaultValue="EGLL"/>
+	<preference hidden="true" group="metar2"  description="Metar City Name - debug value = ignore" name="City" defaultValue="London Heathrow"/>
+
+	<preference name="windUnit" group="metar" title="Anemometer unit" type="popup"
+                description="Select the anemometer unit of scale. The default is the knots scale the alternative is metres/sec.">
+		<option>knots</option>
+		<optionValue>knots</optionValue>
+		<option>metres</option>
+		<optionValue>metres</optionValue>
+		<group>metar</group>
+		<defaultValue>knots</defaultValue>
+	</preference>
+  
+	<preference name="tempUnit" group="metar" title="Temperature unit" type="popup"
+                description="Select the temperature unit. The default is the celsius scale, the alternatives are fahrenheit and kelvin.">
+		<option>Kelvin</option>
+		<optionValue>kelvin</optionValue>
+		<option>Celsius</option>
+		<optionValue>celsius</optionValue>
+		<option>Fahrenheit</option>
+		<optionValue>fahrenheit</optionValue>
+		<defaultValue>celsius</defaultValue>
+		<group>metar</group>
+	</preference>
+  
+	<preference name="imperialMetricPref" title="Metric or Imperial" type="popup"
+                description="Select the cloud height unit. The default is the imperial (ft). This won't change wind speed in knots to km/h as surprisingly knots are accepted metric measurement.">
+		<option>Imperial</option>
+		<optionValue>imperial</optionValue>
+		<option>Metric</option>
+		<optionValue>metric</optionValue>
+		<group>metar</group>
+		<defaultValue>imperial</defaultValue>
+	</preference>
+  
+  
+  <preference hidden="false" group="metar" description="Disable this to ignore any failures to connect to the weather server and prevent the alerts." name="alertPref" title="Alert Control:" defaultValue="enabled" type="popup">
+            <option>enabled</option>
+            <option>disabled</option>
+  </preference>
+    
+  <preference group="metar" description="The number of failed poll attempts before an error is highlighted." name="connectErrorCountPref" title="Alerts:" defaultValue="1" type="popup">
+            <option>1</option>
+            <option>2</option>
+            <option>4</option>
+            <option>8</option>
+            <option>16</option>
+            <option>32</option>
+  </preference>
+ 
+
+  <preference hidden="false" description="Turning on the debugging will provide extra information in the debug window. To obtain the debug window press SHIFT+CTRL simultaneously whilst right clicking on the Yahoo widget systray icon, then select debug from the drop down menu. You will need to restart the widget properly rather than doing a simple restart for debugging information to appear." name="debugflgPref" group="development" title="Debug:" defaultValue="1" type="popup">
+      <option>Debug OFF</option>
+      <optionValue>0</optionValue>
+      <option>Debug ON</option>
+      <optionValue>1</optionValue>
+  </preference>
+
+  
+	<preference hidden="true" group="metar2" name="lastPres" defaultValue="760"/>	
+  <preference hidden="true" group="metar2" name="lastPres" defaultValue="760"/>
+	<preference hidden="true" group="metar2" name="lastUpdated" defaultValue="0"/>
+	<preference hidden="true" group="metar2" name="lastTooltip" defaultValue=""/>
+	<script src="script.js"/>
+	<script src="metar.js"/>
+	<script src="sunRiseAndSet.js"/>
+	<script src="vitality.js"/>
+</widget>

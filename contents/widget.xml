@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<name>Panzer Weather Widget</name>
+	<version>1.0</version>
+	<author name="Dean Beedell" />
+	<image usage="security" src="Resources/images/security.png"/>
+	<image usage="dock" src="Resources/images/dock.png"/>
+	<platform minVersion="4.0" /> 
+  <!--
+      IMPORTANT : do NOT change the minimum supported widget version to 4.5
+	-->
+    <copyright>(c) 2011-2016 Dean Beedell</copyright>
+    <description>The Konfabulator Panzer Weather Widget.</description>
+	<security>
+          <filesystem>full</filesystem>
+          <http>all</http>
+          <applescript>true</applescript>
+          <command>true</command>
+          <hotkey>false</hotkey>
+	</security>
+</metadata>
