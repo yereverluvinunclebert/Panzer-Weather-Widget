@@ -1,10 +1,8 @@
 # Panzer-Weather-YWidget
  
 Panzer Weather Gauge Yahoo Widget, written in Javascript and XML for the Yahoo 
-Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as  
-Apple Mac Sierra.
+Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as  Apple Mac Sierra.
 
-![panzerStorage650](https://github.com/yereverluvinunclebert/Panzer-Storage-Gauge-Ywidget/assets/2788342/c09a4cbe-ddde-4d76-a0d4-f7294f317e0a)
 
 This Panzer weather widget is an attractive set of dieselpunk Yahoo widgets for 
 your desktop. It is a set of weather gauges. The widget consists of five gauges, 
