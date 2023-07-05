@@ -3,7 +3,7 @@
 Panzer Weather Gauge Yahoo Widget, written in Javascript and XML for the Yahoo 
 Widget (Konfabulator) Engine. Created for XP, Vista, Win7, 8, 10+ as well as  Apple Mac Sierra.
 
-![panzerWeather650](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/84cd3ab3-bdd3-4ea2-9889-f40f1e276894)
+![panzerWeather650](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/73c299e9-b8f6-422d-9a95-5f70a16183e3)
 
 This Panzer weather widget is an attractive set of dieselpunk Yahoo widgets for 
 your desktop. It is a set of weather gauges. The widget consists of five gauges, 
@@ -15,9 +15,10 @@ change. The fifth gauge shows the current weather in iconised form, this is be a
 summary of the information derived from the weather or the current weather 
 forecast...
 
-![weather-icon-01](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/13c71691-9e1f-44a6-a463-6d9cf49d16d1)
+![weather-icon-01](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/ff953574-718b-47d1-84af-b425771a7db1)
 
-![background](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/3b3da7cb-84d0-4e8f-96cc-218e80aab092)
+![background](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/07b0c7b4-a4e9-4b6c-89d3-fde55b0b735b)
+
 
 It takes the weather from forecasts provided by airports and airfields. If you 
 can find an airfield nearby that has an ICAO code then it will supply local 
@@ -39,7 +40,7 @@ the Yahoo Widget Konfabulator engine. The engine interprets the javascript and
 creates the widget according to the XML description and using the images you 
 provide. 
 
-![panzer-temperature-icon](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/9fb6faad-bf1a-42e9-bc64-3853e9ab42df)
+![panzer-temperature-icon](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/f4b3b246-c895-4458-ab29-57a5f84e0d26)
 
 Built using: 
 
@@ -70,7 +71,8 @@ Running the widget using a javascript engine frees javascript from running only
 within the captivity of a browser, you will now be able to run these widgets on 
 your Windows desktop as long as you have the correct widget engine installed.
 
-![panzer-clipboard-help](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/d60f0956-532f-45e1-9506-82594eb27b83)
+![panzer-clipboard-help](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/91ef78ab-c7c6-4836-a9b1-d01e78014116)
+
  
 Instructions for running Yahoo widgets on Windows
 =================================================
@@ -103,7 +105,7 @@ Wit these instructions you should be able to start Yahoo! Widgets and the
 menubar item should appear. Widgets can then be started from the menubar or by 
 double-clicking on the KON file in the usual way.
 
-![about](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/0fc1e325-7a67-4eac-bc8f-fb6257086882)
+
 
 LICENCE AGREEMENTS:
 
