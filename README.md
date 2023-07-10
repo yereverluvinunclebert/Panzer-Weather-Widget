@@ -29,11 +29,16 @@ will have a forecast. The data feed is provided by Aviation Weather GOV -
 
 In addition there is a clipboard which tells you the weather in textual form.
 Double-click on a gauge to get the latest weather. 
+
+![panzer-weather-help](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/23582667-4a0d-4719-b6a0-b1a1407ccf7f)
  
 These Widget gauges are moveable widgets that you can move anywhere around the 
 desktop as you require.The widgets can be resized - Hover the cursor over each 
 widget. Press the CTRL key and use your mousewheel up or down. The widget will 
 resize dynamically.
+
+![panzer-weather-gauges](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/9d1fb5ee-0e4e-467a-a337-36fd2fa9bc64)
+
 
 All javascript widgets need an engine to function, in this case the widget uses 
 the Yahoo Widget Konfabulator engine. The engine interprets the javascript and 
@@ -105,6 +110,7 @@ Wit these instructions you should be able to start Yahoo! Widgets and the
 menubar item should appear. Widgets can then be started from the menubar or by 
 double-clicking on the KON file in the usual way.
 
+![weather](https://github.com/yereverluvinunclebert/Panzer-Weather-Widget/assets/2788342/4ab9945b-f460-43c9-b2d2-92a0643c50d0)
 
 
 LICENCE AGREEMENTS:
