@@ -830,8 +830,8 @@ function updateWeather() {
 // this is the main function that is called by the main routine
 //=======================================================================
 function confirmUpdateWeather() {
-	var answer = alert("The widget will now poll the weather from aviationWeather.gov, the first attempt is manual, subsequent polls are automatic - proceed?", "Get the weather", "No Thanks");
-
+	//var answer = alert("The widget will now poll the weather from aviationWeather.gov, the first attempt is manual, subsequent polls are automatic - proceed?", "Get the weather", "No Thanks");
+    answer = 1
 	if (answer === 1) {
         busyStart();
     	getData(preferences.icao.value);
@@ -1930,7 +1930,7 @@ function weatherTimerFunction() {
 
 function setDebugState() {
  
-    debugFlg = preferences.debugflgPref.value;    
+    debugFlg = preferences.debugFlgPref.value;    
         
     print (" debugFlg " + debugFlg);
     

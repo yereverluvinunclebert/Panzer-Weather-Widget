@@ -677,8 +677,13 @@ function setmenu() {
             reloadWidget();
         };
 		items.push(mItem);
+        
+        debugFlg = preferences.debugFlgPref.value;   
+    //print (" debugFlg " + debugFlg);
+    //print (" preferences.imageEditPref.value " + preferences.imageEditPref.value);
+        
  
-		if (preferences.imageEditPref.value != "" && debugFlg == 1) {
+		if (preferences.imageEditPref.value != "" && debugFlg == "1") {
 		    mItem = new MenuItem();
 		    mItem.title = "Edit Widget using " + preferences.imageEditPref.value ;
 		    mItem.onSelect = function () {

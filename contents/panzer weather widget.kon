@@ -757,7 +757,7 @@
   </preference>
  
 
-  <preference hidden="false" description="Turning on the debugging will provide extra information in the debug window. To obtain the debug window press SHIFT+CTRL simultaneously whilst right clicking on the Yahoo widget systray icon, then select debug from the drop down menu. You will need to restart the widget properly rather than doing a simple restart for debugging information to appear." name="debugflgPref" group="development" title="Debug:" defaultValue="1" type="popup">
+  <preference hidden="false" description="Turning on the debugging will provide extra information in the debug window. To obtain the debug window press SHIFT+CTRL simultaneously whilst right clicking on the Yahoo widget systray icon, then select debug from the drop down menu. You will need to restart the widget properly rather than doing a simple restart for debugging information to appear." name="debugFlgPref" group="development" title="Debug:" defaultValue="1" type="popup">
       <option>Debug OFF</option>
       <optionValue>0</optionValue>
       <option>Debug ON</option>
